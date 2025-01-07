@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # Dự án API Danh Mục Hành Chính Việt Nam
 
@@ -115,7 +114,4 @@ Nếu có bất kỳ câu hỏi hoặc góp ý nào, hãy liên hệ với tôi 
 
 # Cảm ơn bạn đã ghé thăm và sử dụng dự án!
 
-# api_map_VN
 
-> > > > > > > 3544e3e6865273679ed5ed89da2941992e2e143e
-> > > > > > > "# api_map"
