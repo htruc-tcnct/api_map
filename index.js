@@ -1,7 +1,8 @@
 const express = require("express");
 const axios = require("axios");
 const XLSX = require("xlsx");
-
+const { config } = require("dotenv");
+config();
 const app = express();
 const PORT = 3000;
 
