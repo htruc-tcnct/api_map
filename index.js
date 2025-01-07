@@ -227,27 +227,34 @@ app.get("/api/w/:code", async (req, res) => {
   }
 });
 // Router hướng dẫn người dùng
+// Router hướng dẫn người dùng
 app.get("/", (req, res) => {
   res.json({
     message: "Welcome to the API for location data in Vietnam!",
+    slogan: "Simplifying administrative data, one API call at a time.",
+    creator: "charos_nguyen",
     usage: {
       "/api/p": "Get the list of provinces/cities along with their codes",
       "/api/p/:code": "Get details of a province/city by its code",
-      "/api/d":
+      "/api/d?province=<Province Name>":
         "Get the list of districts. Use ?province=<Province Name> to filter",
       "/api/d/:code": "Get details of a district by its code",
-      "/api/w":
+      "/api/d/province/:code": "Get the list of districts by province code",
+      "/api/w?district=<District Name>":
         "Get the list of wards. Use ?district=<District Name> to filter",
       "/api/w/:code": "Get details of a ward by its code",
+      "/api/w/district/:code": "Get the list of wards by district code",
     },
     exampleUsage: {
       "Get all provinces": "GET /api/p",
       "Get a province by code": "GET /api/p/01",
       "Get all districts": "GET /api/d",
-      "Filter districts by province": "GET /api/d?province=Hà Nội",
+      "Filter districts by province name": "GET /api/d?province=Hà Nội",
+      "Get all districts by province code": "GET /api/d/province/01",
       "Get a district by code": "GET /api/d/001",
       "Get all wards": "GET /api/w",
-      "Filter wards by district": "GET /api/w?district=Ba Đình",
+      "Filter wards by district name": "GET /api/w?district=Ba Đình",
+      "Get all wards by district code": "GET /api/w/district/001",
       "Get a ward by code": "GET /api/w/00001",
     },
   });
