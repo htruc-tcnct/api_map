@@ -2,11 +2,11 @@ const express = require("express");
 const axios = require("axios");
 const XLSX = require("xlsx");
 const { config } = require("dotenv");
-
+const cors = require("cors");
 config();
 const app = express();
 const PORT = 3000;
-
+app.use(cors());
 // URL công khai của file Excel trên S3
 const fileUrl = process.env.URL_S3_DB;
 
