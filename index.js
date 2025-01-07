@@ -58,6 +58,37 @@ app.get("/api/p/:code", async (req, res) => {
     res.status(500).send("Error fetching province details");
   }
 });
+// **API**: Lấy tất cả quận/huyện theo mã code của tỉnh
+app.get("/api/d/province/:code", async (req, res) => {
+  try {
+    const data = await fetchData();
+    const provinceCode = req.params.code;
+
+    // Lọc danh sách các quận/huyện theo mã tỉnh
+    const districts = [
+      ...new Map(
+        data
+          .filter((item) => item["Mã TP"] === provinceCode)
+          .map((item) => [
+            item["Mã QH"],
+            { code: item["Mã QH"], name: item["Quận Huyện"] },
+          ])
+      ).values(),
+    ];
+
+    // Kiểm tra nếu không tìm thấy quận/huyện
+    if (districts.length === 0) {
+      return res
+        .status(404)
+        .send("No districts found for the provided province code");
+    }
+
+    res.json(districts);
+  } catch (error) {
+    console.error("Error fetching districts by province code:", error);
+    res.status(500).send("Error fetching districts");
+  }
+});
 
 // **API**: Lấy danh sách quận/huyện
 app.get("/api/d", async (req, res) => {
@@ -143,6 +174,37 @@ app.get("/api/w", async (req, res) => {
 
     res.json(wards);
   } catch (error) {
+    res.status(500).send("Error fetching wards");
+  }
+});
+// **API**: Lấy tất cả xã/phường theo mã huyện
+app.get("/api/w/district/:code", async (req, res) => {
+  try {
+    const data = await fetchData();
+    const districtCode = req.params.code;
+
+    // Lọc danh sách các xã/phường theo mã huyện
+    const wards = [
+      ...new Map(
+        data
+          .filter((item) => item["Mã QH"] === districtCode)
+          .map((item) => [
+            item["Mã PX"],
+            { code: item["Mã PX"], name: item["Phường Xã"] },
+          ])
+      ).values(),
+    ];
+
+    // Kiểm tra nếu không tìm thấy xã/phường nào
+    if (wards.length === 0) {
+      return res
+        .status(404)
+        .send("No wards found for the provided district code");
+    }
+
+    res.json(wards);
+  } catch (error) {
+    console.error("Error fetching wards by district code:", error);
     res.status(500).send("Error fetching wards");
   }
 });
