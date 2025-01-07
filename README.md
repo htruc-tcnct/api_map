@@ -1,6 +1,8 @@
 
 # Dự án API Danh Mục Hành Chính Việt Nam
 
+## API tôi đã deploy, bạn có thể call nó(nhưng có thể sẽ bị chậm): **https://api-map-2.onrender.com/**
+
 ## Giới thiệu
 
 Chào mừng bạn đến với dự án **API Danh Mục Hành Chính Việt Nam**!
