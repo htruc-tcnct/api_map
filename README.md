@@ -84,12 +84,20 @@ Server sẽ chạy tại địa chỉ: `http://localhost:3000`.
 
 - **Mô tả**: Trả về thông tin chi tiết của quận/huyện theo mã.
 
+**GET** `/api/d/province/:code`
+
+- **Mô tả**: Trả về danh sách quận/huyện theo mã của tỉnh/thành phố.
+  
 #### Lấy danh sách phường/xã
 
 **GET** `/api/w?district=<district-name>`
 
 - **Mô tả**: Trả về danh sách phường/xã theo tên quận/huyện.
+  
+**GET** `/api/w/district/:code`
 
+- **Mô tả**: Trả về danh sách phường/xã theo mã của quận/huyện.
+  
 #### Lấy chi tiết phường/xã
 
 **GET** `/api/w/:code`
