@@ -59,7 +59,6 @@ Server sẽ chạy tại địa chỉ: `http://localhost:3000`.
 ---
 
 ### 3. API Endpoints
-
 #### Lấy danh sách tỉnh/thành phố
 
 **GET** `/api/p`
@@ -74,21 +73,23 @@ Server sẽ chạy tại địa chỉ: `http://localhost:3000`.
 
 #### Lấy danh sách quận/huyện
 
+**GET** `/api/d`
+
+- **Mô tả**: Trả về danh sách toàn bộ quận/huyện.
+
 **GET** `/api/d?province=<province-name>`
 
 - **Mô tả**: Trả về danh sách quận/huyện theo tên tỉnh/thành phố.
-
-#### Lấy chi tiết quận/huyện
-
-**GET** `/api/d/:code`
-
-- **Mô tả**: Trả về thông tin chi tiết của quận/huyện theo mã.
 
 **GET** `/api/d/province/:code`
 
 - **Mô tả**: Trả về danh sách quận/huyện theo mã của tỉnh/thành phố.
   
 #### Lấy danh sách phường/xã
+
+**GET** `/api/w`
+
+- **Mô tả**: Trả về danh sách toàn bộ phường/xã.
 
 **GET** `/api/w?district=<district-name>`
 
@@ -103,6 +104,41 @@ Server sẽ chạy tại địa chỉ: `http://localhost:3000`.
 **GET** `/api/w/:code`
 
 - **Mô tả**: Trả về thông tin chi tiết của phường/xã theo mã.
+
+---
+
+##### Ví dụ:
+
+```json
+{
+  "message": "Welcome to the API for location data in Vietnam!",
+  "slogan": "Simplifying administrative data, one API call at a time.",
+  "creator": "charos_nguyen",
+  "usage": {
+    "/api/p": "Get the list of provinces/cities along with their codes",
+    "/api/p/:code": "Get details of a province/city by its code",
+    "/api/d": "Get the list of all districts",
+    "/api/d?province=<Province Name>": "Get the list of districts. Use ?province=<Province Name> to filter",
+    "/api/d/province/:code": "Get the list of districts by province code",
+    "/api/d/:code": "Get details of a district by its code",
+    "/api/w": "Get the list of all wards",
+    "/api/w?district=<District Name>": "Get the list of wards. Use ?district=<District Name> to filter",
+    "/api/w/district/:code": "Get the list of wards by district code",
+    "/api/w/:code": "Get details of a ward by its code"
+  },
+  "exampleUsage": {
+    "Get all provinces": "GET /api/p",
+    "Get a province by code": "GET /api/p/01",
+    "Get all districts": "GET /api/d",
+    "Filter districts by province name": "GET /api/d?province=Hà Nội",
+    "Get all districts by province code": "GET /api/d/province/01",
+    "Get a district by code": "GET /api/d/001",
+    "Get all wards": "GET /api/w",
+    "Filter wards by district name": "GET /api/w?district=Ba Đình",
+    "Get all wards by district code": "GET /api/w/district/001",
+    "Get a ward by code": "GET /api/w/00001"
+  }
+}
 
 ---
 
