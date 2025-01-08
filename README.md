@@ -1,6 +1,6 @@
 # Dự án API Danh Mục Hành Chính Việt Nam
 
-## Server tôi đã deploy, bạn có thể call nó (nhưng có thể sẽ bị chậm): **https://api-map-2.onrender.com/**
+## Server tôi đã deploy, bạn có thể call nó (nhưng có thể sẽ bị chậm): **[Server](https://api-map-2.onrender.com/)**
 
 ## Giới thiệu
 
