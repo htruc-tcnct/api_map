@@ -1,7 +1,6 @@
-
 # Dự án API Danh Mục Hành Chính Việt Nam
 
-## Server tôi đã deploy, bạn có thể call nó(nhưng có thể sẽ bị chậm): **https://api-map-2.onrender.com/**
+## Server tôi đã deploy, bạn có thể call nó (nhưng có thể sẽ bị chậm): **https://api-map-2.onrender.com/**
 
 ## Giới thiệu
 
@@ -58,20 +57,21 @@ Server sẽ chạy tại địa chỉ: `http://localhost:3000`.
 
 ---
 
-### 3. API Endpoints
-#### Lấy danh sách tỉnh/thành phố
+## 3. API Endpoints
+
+### Lấy danh sách tỉnh/thành phố
 
 **GET** `/api/p`
 
 - **Mô tả**: Trả về danh sách tỉnh/thành phố cùng mã.
 
-#### Lấy chi tiết tỉnh/thành phố
+### Lấy chi tiết tỉnh/thành phố
 
 **GET** `/api/p/:code`
 
 - **Mô tả**: Trả về thông tin chi tiết của tỉnh/thành phố theo mã.
 
-#### Lấy danh sách quận/huyện
+### Lấy danh sách quận/huyện
 
 **GET** `/api/d`
 
@@ -84,8 +84,12 @@ Server sẽ chạy tại địa chỉ: `http://localhost:3000`.
 **GET** `/api/d/province/:code`
 
 - **Mô tả**: Trả về danh sách quận/huyện theo mã của tỉnh/thành phố.
-  
-#### Lấy danh sách phường/xã
+
+**GET** `/api/d/:code`
+
+- **Mô tả**: Trả về chi tiết của quận/huyện theo mã.
+
+### Lấy danh sách phường/xã
 
 **GET** `/api/w`
 
@@ -94,12 +98,12 @@ Server sẽ chạy tại địa chỉ: `http://localhost:3000`.
 **GET** `/api/w?district=<district-name>`
 
 - **Mô tả**: Trả về danh sách phường/xã theo tên quận/huyện.
-  
+
 **GET** `/api/w/district/:code`
 
 - **Mô tả**: Trả về danh sách phường/xã theo mã của quận/huyện.
-  
-#### Lấy chi tiết phường/xã
+
+### Lấy chi tiết phường/xã
 
 **GET** `/api/w/:code`
 
@@ -107,13 +111,10 @@ Server sẽ chạy tại địa chỉ: `http://localhost:3000`.
 
 ---
 
-##### Ví dụ:
+## Ví dụ:
 
 ```json
 {
-  "message": "Welcome to the API for location data in Vietnam!",
-  "slogan": "Simplifying administrative data, one API call at a time.",
-  "creator": "charos_nguyen",
   "usage": {
     "/api/p": "Get the list of provinces/cities along with their codes",
     "/api/p/:code": "Get details of a province/city by its code",
@@ -139,6 +140,7 @@ Server sẽ chạy tại địa chỉ: `http://localhost:3000`.
     "Get a ward by code": "GET /api/w/00001"
   }
 }
+```
 
 ---
 
@@ -159,5 +161,3 @@ Nếu bạn muốn đóng góp vào dự án, hãy fork repository, tạo branch
 Nếu có bất kỳ câu hỏi hoặc góp ý nào, hãy liên hệ với tôi qua email: **nguyencharos@gmail.com** hoặc tạo một issue trên GitHub.
 
 # Cảm ơn bạn đã ghé thăm và sử dụng dự án!
-
-
